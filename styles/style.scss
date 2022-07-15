@@ -1,0 +1,148 @@
+//need to get italics sorted
+
+$-clr-p-blue: hsla(245, 100%, 31%, 1);
+$-clr-p-black: hsla(180, 9%, 11%, 1);
+$-clr-n-500: hsla(49, 8%, 41%, 1);
+$-clr-n-400: hsla(24, 13%, 37%, 1);
+$-clr-n-300: hsla(167, 10%, 82%, 1);
+$-clr-n-200: hsla(167, 28%, 97%, 1);
+
+
+$-fs-1000: 4.276rem;
+$-fs-900: 3.356rem;
+$-fs-800: 2.634rem;
+$-fs-700: 2.068rem;
+$-fs-600: 1.623rem;
+$-fs-500: 1.274rem;
+$-fs-400: 1rem;
+$-fs-300: .785rem;
+$-fs-200: .625rem;
+
+@use 'reset';
+
+a {
+  text-decoration: none;
+  color: $-clr-p-black;
+  &:hover {
+    color: red;
+    outline: 1px dashed red;
+  }
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $-clr-n-200;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: $-clr-n-200;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    padding: 1rem;
+    width: 20%;
+    min-width: 200px;
+  }
+  nav {
+    padding-inline: 1rem;
+    display: flex;
+    list-style: none;
+    li {
+      padding: 1rem;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
+
+.home, .mission, .services, .news, .contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10vh;
+  height: 100%;
+  align-items: center;
+  height: 90vh;
+  transform: translateZ(-5px) scale(1.5);
+  transform-style: preserve-3d;
+
+  &__header {
+    font-size: $-fs-1000;
+    font-weight: 900;
+    color: $-clr-p-black;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url(../Images/supplyChainMed.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transform: translateZ(-12px) scale(1.95);
+  }
+}
+
+.services {
+  border: 1px dashed red;
+  background-color: $-clr-n-200;
+  color: $-clr-p-black;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.news {
+  background-color: $-clr-n-300;
+  height: 90vh;
+}
+
+.contact {
+  border: 1px dotted salmon;
+  height: 90vh;
+}
+
+button {
+  background-color: $-clr-n-200;
+  border: none;
+  border-radius: 1rem;
+  color: $-clr-n-500;
+  font-size: 1rem;
+  font-weight: 800;
+  font-style: bold;
+  padding: 1rem 1rem;
+  width: fit-content;
+}

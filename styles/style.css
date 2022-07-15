@@ -1,0 +1,197 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: hsl(180deg, 9%, 11%);
+}
+a:hover {
+  color: red;
+  outline: 1px dashed red;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: hsl(167deg, 28%, 97%);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: hsl(167deg, 28%, 97%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header img {
+  padding: 1rem;
+  width: 20%;
+  min-width: 200px;
+}
+header nav {
+  padding-inline: 1rem;
+  display: flex;
+  list-style: none;
+}
+header nav li {
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
+
+.home, .mission, .services, .news, .contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10vh;
+  height: 100%;
+  align-items: center;
+  height: 90vh;
+  transform: translateZ(-5px) scale(1.5);
+  transform-style: preserve-3d;
+}
+.home__header {
+  font-size: 4.276rem;
+  font-weight: 900;
+  color: hsl(180deg, 9%, 11%);
+}
+.home:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-image: url(../Images/supplyChainMed.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transform: translateZ(-12px) scale(1.95);
+}
+
+.services {
+  border: 1px dashed red;
+  background-color: hsl(167deg, 28%, 97%);
+  color: hsl(180deg, 9%, 11%);
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+.news {
+  background-color: hsl(167deg, 10%, 82%);
+  height: 90vh;
+}
+
+.contact {
+  border: 1px dotted salmon;
+  height: 90vh;
+}
+
+button {
+  background-color: hsl(167deg, 28%, 97%);
+  border: none;
+  border-radius: 1rem;
+  color: hsl(49deg, 8%, 41%);
+  font-size: 1rem;
+  font-weight: 800;
+  font-style: bold;
+  padding: 1rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}/*# sourceMappingURL=style.css.map */
