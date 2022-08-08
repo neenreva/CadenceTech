@@ -69,6 +69,17 @@ h6 {
   }
 }
 
+.icon {
+  margin-right: 1rem;
+  background-color: $--clr-p-400;
+  border-radius: 2rem;
+  fill: $--clr-n-700;
+  &:hover {
+    fill: $--clr-p-400;
+    background-color: $--clr-n-700;
+  }
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
@@ -135,11 +146,6 @@ h6 {
     align-items: center;
     padding: 1rem;
   }
-  &__list-image {
-    margin-right: 1rem;
-    background-color: $--clr-p-400;
-    border-radius: 2rem;
-  }
 }
 
 .about {
@@ -149,7 +155,8 @@ h6 {
   height: 100%;
   padding: 0 9rem;
 
-  &__cadence-header, &__cadence-sub-header {
+  &__cadence-header,
+  &__cadence-sub-header {
     padding: 1rem;
   }
 
@@ -170,10 +177,13 @@ h6 {
       align-items: center;
       padding: 1rem;
     }
-    &-list-icon {
-      margin-right: 1rem;
-      background-color: $--clr-p-400;
-      border-radius: 2rem;
-    }
   }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 9rem;
 }

@@ -134,6 +134,17 @@ h6 {
   background-color: hsl(211deg, 31%, 66%);
 }
 
+.icon {
+  margin-right: 1rem;
+  background-color: hsl(211deg, 31%, 66%);
+  border-radius: 2rem;
+  fill: hsl(216deg, 44%, 25%);
+}
+.icon:hover {
+  fill: hsl(211deg, 31%, 66%);
+  background-color: hsl(216deg, 44%, 25%);
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
@@ -199,11 +210,6 @@ h6 {
   align-items: center;
   padding: 1rem;
 }
-.services__list-image {
-  margin-right: 1rem;
-  background-color: hsl(211deg, 31%, 66%);
-  border-radius: 2rem;
-}
 
 .about {
   display: flex;
@@ -234,8 +240,11 @@ h6 {
   align-items: center;
   padding: 1rem;
 }
-.about__owner-list-icon {
-  margin-right: 1rem;
-  background-color: hsl(211deg, 31%, 66%);
-  border-radius: 2rem;
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 9rem;
 }/*# sourceMappingURL=style.css.map */
