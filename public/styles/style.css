@@ -108,6 +108,7 @@ h2 {
 
 h3 {
   font-size: clamp(2.07rem, 1.97rem + 0.53vw, 2.44rem);
+  text-transform: uppercase;
 }
 
 h4 {
@@ -121,6 +122,13 @@ h5 {
 
 h6 {
   font-size: clamp(1.2rem, 1.19rem + 0.07vw, 1.25rem);
+}
+
+a {
+  color: hsl(239deg, 100%, 11%);
+}
+a:hover {
+  color: hsl(205deg, 38%, 40%);
 }
 
 .btn {
@@ -170,11 +178,44 @@ h6 {
   width: 100%;
   z-index: 1;
 }
+@media (max-width: 650px) {
+  .nav__links {
+    display: none;
+  }
+}
 .nav__link {
   padding: 1rem;
 }
-.nav__link:hover {
-  color: hsl(205deg, 38%, 40%);
+.nav__mobile-links {
+  display: none;
+}
+@media (max-width: 650px) {
+  .nav__mobile-links {
+    display: inline;
+  }
+}
+.nav__mobile-links-list {
+  /* Needs fixing */
+}
+@media (max-width: 650px) {
+  .nav__mobile-links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 50%;
+    background-color: hsl(230deg, 23%, 95%);
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 2rem;
+    border-radius: 4px;
+    transform: translateX(120%);
+  }
+}
+.nav__mobile-links-list-active {
+  transform: translateX(-120%);
 }
 
 .main {
@@ -217,6 +258,7 @@ h6 {
 }
 .services__info, .services__list {
   width: 50%;
+  padding: 1rem;
 }
 @media (max-width: 725px) {
   .services__info, .services__list {
@@ -242,12 +284,16 @@ h6 {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  background-color: hsl(211deg, 31%, 66%);
   padding-inline: clamp(1rem, 5%, 9rem);
 }
 @media (max-width: 725px) {
   .about {
     text-align: center;
   }
+}
+.about__cadence {
+  padding-inline: 1rem;
 }
 .about__cadence-sub-header {
   color: hsl(205deg, 38%, 40%);
@@ -273,7 +319,7 @@ h6 {
   align-items: center;
   padding: 1rem;
 }
-@media (max-width: 450px) {
+@media (max-width: 475px) {
   .about__owner-list-item {
     flex-direction: column;
   }
@@ -292,6 +338,7 @@ h6 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding-inline: 1rem;
 }
 .contact__info-container {
   display: flex;
@@ -343,7 +390,9 @@ h6 {
 }
 
 @media (max-width: 750px) {
-  .services, .about, .contact {
+  .services,
+.about,
+.contact {
     height: auto;
     padding-block: 4rem;
   }

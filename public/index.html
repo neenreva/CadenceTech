@@ -12,6 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="../assets/cadenceFavicon.png" type="image/x-icon">
+    <script defer src="../app.js"></script>
   </head>
   <body>
     <nav class="nav">
@@ -21,6 +23,14 @@
         <a href="#about" class="nav__link">About</a>
         <a href="#contact"><button class="btn">Contact</button></a>
     </div>
+    <div class="nav__mobile-links nav__mobile-links-active">
+        <button class="btn hamburger"><img data-hambtnimg src="../assets/Hamburger.svg" alt=""></button>
+        <div class="nav__mobile-links-list">
+            <a href="#services" class="nav__link">Services</a>
+            <a href="#about" class="nav__link">About</a>
+            <a href="#contact"><button class="btn">Contact</button></a>
+        </div>
+    </div>
 </nav>
     <div class="wrapper">
       
@@ -28,9 +38,9 @@
   <img src="./assets/dataMed.jpg" class="main__background" />
   <div class="main__copy">
     <h1 class="main__title">Complex Supply Chains. Untangled.</h1>
-    <h5 class="main__sub-title">
+    <h4 class="main__sub-title">
       Cadence helps companies achieve true supply chain optimization.
-    </h5>
+    </h4>
   </div>
 </section>
 <section id="services" class="services">
@@ -220,7 +230,7 @@
           />
         </svg>
 
-        <p>jbliss@cadence-tech.com</p>
+        <a href="mailto:jbliss@cadence-tech.com">jbliss@cadence-tech.com</a>
       </li>
     </ul>
   </div>
@@ -257,18 +267,17 @@
     <div class="contact__info">
       <ul role="list">
         <li>
-          <h3>Email Us</h3>
-          <a href="">info@cadencetech.com</a>
+          <h4>Email Us</h4>
+          <a href="mailto:info@cadencetech.com">info@cadencetech.com</a>
         </li>
         <li>
-          <h3>Call us</h3>
-          <a href="">703-825-3280</a>
-          <!-- Find mobile friendlyness -->
+          <h4>Call us</h4>
+          <a href="tel:703-825-3280">703-825-3280</a>
         </li>
         <li>
-          <h3>Media</h3>
+          <h4>Media</h4>
           <div>
-            <a href="">
+            <a href="https://www.linkedin.com/company/cadence-technology-consulting-llc">
               <svg
                 class="icon"
                 width="41"
@@ -285,7 +294,7 @@
                 />
               </svg>
             </a>
-            <a href="">
+            <a href="https://www.youtube.com/channel/UCo9CZYrTJplOKxWTKNKxDTQ/featured">
               <svg
                 class="icon"
                 width="41"
