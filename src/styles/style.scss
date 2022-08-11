@@ -96,11 +96,21 @@ a {
   }
 }
 
+.icon-invert {
+  background-color: $--clr-n-700;
+  fill: $--clr-p-100;
+  &:hover {
+    background-color: $--clr-n-500;
+    fill: $--clr-n-300;
+  }
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 10px;
+  scroll-behavior: smooth;
 }
 
 .nav {
@@ -113,43 +123,44 @@ a {
   width: 100%;
   z-index: 1;
 
-  &__links {
+/*   &__logo {
     @media (max-width: 650px) {
-      display: none;
+      width: 80%;
     }
-  }
+  } */
 
   &__link {
     padding: 1rem;
   }
 
+  &__links {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    @media (max-width: 650px) {
+      position: absolute;
+      top: 120%;
+      right: 2rem;
+      width: 50%;
+      flex-direction: column;
+      background-color: $--clr-p-100;
+      transform: translateX(120%);
+    }
+  }
+
   &__mobile-links {
     display: none;
     @media (max-width: 650px) {
-      display: inline;
+      display: block;
     }
-    &-list {
-      @media (max-width: 650px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: fit-content;
-        width: 50%;
-        background-color: $--clr-p-100;
-        position: absolute;
-        top: calc(100% + 1rem);
-        right: 2rem;
-        border-radius: 4px;
-        transform: translateX(120%);
-      }
-
-      &-active {
-        transform: translateX(-120%);
-      } /* Needs fixing */
-    }
-
   }
 }
+
+.nav-active {
+  transform: translateX(0);
+}
+
+
 
 .main {
   position: relative;
@@ -157,6 +168,7 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 30rem;
   height: 100%;
   transform-style: preserve-3d;
   z-index: -1;
@@ -186,6 +198,7 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: unset;
   }
 
   &__info,
@@ -223,6 +236,7 @@ a {
 
   @media (max-width: 725px) {
     text-align: center;
+    height: unset;
   }
 
   &__cadence {
@@ -264,6 +278,10 @@ a {
   align-items: center;
   height: 100%;
   padding-inline: clamp(1rem, 5%, 9rem);
+
+  @media (max-width: 725px) {
+    height: unset;
+  }
 
   &__header {
     display: flex;
@@ -326,11 +344,8 @@ a {
   }
 }
 
-.services,
-.about,
-.contact {
-  @media (max-width: 750px) {
-    height: auto;
-    padding-block: 4rem;
+.services, .about, .contact {
+  @media screen and (max-height: 450px) and (orientation: landscape) {
+    height: max-content;
   }
 }
