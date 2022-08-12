@@ -100,7 +100,7 @@ a {
   background-color: $--clr-n-700;
   fill: $--clr-p-100;
   &:hover {
-    background-color: $--clr-n-500;
+    background-color: $--clr-p-400;
     fill: $--clr-n-300;
   }
 }
@@ -123,7 +123,7 @@ a {
   width: 100%;
   z-index: 1;
 
-/*   &__logo {
+  /*   &__logo {
     @media (max-width: 650px) {
       width: 80%;
     }
@@ -159,8 +159,6 @@ a {
 .nav-active {
   transform: translateX(0);
 }
-
-
 
 .main {
   position: relative;
@@ -231,7 +229,7 @@ a {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  background-color: $--clr-p-400;
+  background-color: $--clr-n-500;
   padding-inline: clamp(1rem, 5%, 9rem);
 
   @media (max-width: 725px) {
@@ -244,7 +242,7 @@ a {
   }
 
   &__cadence-sub-header {
-    color: $--clr-n-500;
+    color: $--clr-p-100;
   }
   &__owner {
     display: flex;
@@ -265,8 +263,15 @@ a {
       display: flex;
       align-items: center;
       padding: 1rem;
+      color: $--clr-n-300;
       @media (max-width: 475px) {
         flex-direction: column;
+      }
+      a {
+        color: $--clr-n-300;
+      }
+      a:hover {
+        color: $--clr-p-100;
       }
     }
   }
@@ -345,7 +350,9 @@ a {
   }
 }
 
-.services, .about, .contact {
+.services,
+.about,
+.contact {
   @media screen and (max-height: 450px) and (orientation: landscape) {
     height: max-content;
   }

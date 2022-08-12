@@ -166,7 +166,7 @@ a:hover {
   fill: hsl(230deg, 23%, 95%);
 }
 .icon-invert:hover {
-  background-color: hsl(205deg, 38%, 40%);
+  background-color: hsl(211deg, 31%, 66%);
   fill: hsl(166deg, 73%, 88%);
 }
 
@@ -188,10 +188,10 @@ a:hover {
   width: 100%;
   z-index: 1;
   /*   &__logo {
-      @media (max-width: 650px) {
-        width: 80%;
-      }
-    } */
+    @media (max-width: 650px) {
+      width: 80%;
+    }
+  } */
 }
 .nav__link {
   padding: 1rem;
@@ -293,7 +293,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  background-color: hsl(211deg, 31%, 66%);
+  background-color: hsl(205deg, 38%, 40%);
   padding-inline: clamp(1rem, 5%, 9rem);
 }
 @media (max-width: 725px) {
@@ -306,7 +306,7 @@ a:hover {
   padding-inline: 1rem;
 }
 .about__cadence-sub-header {
-  color: hsl(205deg, 38%, 40%);
+  color: hsl(230deg, 23%, 95%);
 }
 .about__owner {
   display: flex;
@@ -329,11 +329,18 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 1rem;
+  color: hsl(166deg, 73%, 88%);
 }
 @media (max-width: 475px) {
   .about__owner-list-item {
     flex-direction: column;
   }
+}
+.about__owner-list-item a {
+  color: hsl(166deg, 73%, 88%);
+}
+.about__owner-list-item a:hover {
+  color: hsl(230deg, 23%, 95%);
 }
 
 .contact {
@@ -406,7 +413,9 @@ a:hover {
 }
 
 @media screen and (max-height: 450px) and (orientation: landscape) {
-  .services, .about, .contact {
+  .services,
+.about,
+.contact {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
