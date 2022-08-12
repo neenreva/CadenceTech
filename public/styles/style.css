@@ -312,6 +312,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 @media (max-width: 725px) {
   .about__owner {
