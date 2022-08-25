@@ -187,11 +187,6 @@ a:hover {
   position: fixed;
   width: 100%;
   z-index: 1;
-  /*   &__logo {
-    @media (max-width: 650px) {
-      width: 80%;
-    }
-  } */
 }
 .nav__link {
   padding: 1rem;
@@ -239,6 +234,12 @@ a:hover {
 }
 .main__background, .main__copy {
   position: absolute;
+  top: unset;
+}
+@media (max-width: 725px) {
+  .main__background, .main__copy {
+    top: 4rem;
+  }
 }
 .main__background {
   height: 100%;
@@ -263,6 +264,7 @@ a:hover {
     align-items: center;
     text-align: center;
     height: unset;
+    padding-block: 4rem 1rem;
   }
 }
 .services__info, .services__list {
@@ -300,6 +302,7 @@ a:hover {
   .about {
     text-align: center;
     height: unset;
+    padding-block: 4rem 1rem;
   }
 }
 .about__cadence {
@@ -354,6 +357,7 @@ a:hover {
 @media (max-width: 725px) {
   .contact {
     height: unset;
+    padding-block: 4rem 1rem;
   }
 }
 .contact__header {
@@ -412,12 +416,21 @@ a:hover {
   padding: 1rem;
 }
 
-@media screen and (max-height: 450px) and (orientation: landscape) {
+footer {
+  text-align: center;
+  font-size: clamp(0.8rem, 0.84rem - 0.05vw, 0.83rem);
+}
+footer * {
+  padding: 1rem;
+}
+
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .services,
 .about,
 .contact {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+    padding-block: 5rem 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

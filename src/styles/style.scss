@@ -123,12 +123,6 @@ a {
   width: 100%;
   z-index: 1;
 
-  /*   &__logo {
-    @media (max-width: 650px) {
-      width: 80%;
-    }
-  } */
-
   &__link {
     padding: 1rem;
   }
@@ -174,6 +168,10 @@ a {
   &__background,
   &__copy {
     position: absolute;
+    top: unset;
+    @media (max-width: 725px) {
+      top: 4rem;
+    }
   }
   &__background {
     height: 100%;
@@ -197,6 +195,7 @@ a {
     align-items: center;
     text-align: center;
     height: unset;
+    padding-block: 4rem 1rem;
   }
 
   &__info,
@@ -235,6 +234,7 @@ a {
   @media (max-width: 725px) {
     text-align: center;
     height: unset;
+    padding-block: 4rem 1rem;
   }
 
   &__cadence {
@@ -287,6 +287,7 @@ a {
 
   @media (max-width: 725px) {
     height: unset;
+    padding-block: 4rem 1rem;
   }
 
   &__header {
@@ -350,10 +351,19 @@ a {
   }
 }
 
+footer {
+  text-align: center;
+  font-size: $--fs-300;
+  & * {
+    padding: 1rem;
+  }
+}
+
 .services,
 .about,
 .contact {
-  @media screen and (max-height: 450px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     height: max-content;
+    padding-block: 5rem 1rem;
   }
 }
