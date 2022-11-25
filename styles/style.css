@@ -69,7 +69,7 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
   *,
 *::before,
@@ -108,6 +108,7 @@ h2 {
 
 h3 {
   font-size: clamp(2.07rem, 1.97rem + 0.53vw, 2.44rem);
+  text-transform: uppercase;
 }
 
 h4 {
@@ -121,6 +122,13 @@ h5 {
 
 h6 {
   font-size: clamp(1.2rem, 1.19rem + 0.07vw, 1.25rem);
+}
+
+a {
+  color: hsl(239deg, 100%, 11%);
+}
+a:hover {
+  color: hsl(205deg, 38%, 40%);
 }
 
 .btn {
@@ -153,11 +161,21 @@ h6 {
   background-color: hsl(216deg, 44%, 25%);
 }
 
+.icon-invert {
+  background-color: hsl(216deg, 44%, 25%);
+  fill: hsl(230deg, 23%, 95%);
+}
+.icon-invert:hover {
+  background-color: hsl(211deg, 31%, 66%);
+  fill: hsl(166deg, 73%, 88%);
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 10px;
+  scroll-behavior: smooth;
 }
 
 .nav {
@@ -173,8 +191,33 @@ h6 {
 .nav__link {
   padding: 1rem;
 }
-.nav__link:hover {
-  color: hsl(205deg, 38%, 40%);
+.nav__links {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+@media (max-width: 650px) {
+  .nav__links {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    width: 50%;
+    flex-direction: column;
+    background-color: hsl(230deg, 23%, 95%);
+    transform: translateX(120%);
+  }
+}
+.nav__mobile-links {
+  display: none;
+}
+@media (max-width: 650px) {
+  .nav__mobile-links {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0);
 }
 
 .main {
@@ -183,6 +226,7 @@ h6 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 30rem;
   height: 100%;
   transform-style: preserve-3d;
   z-index: -1;
@@ -190,6 +234,12 @@ h6 {
 }
 .main__background, .main__copy {
   position: absolute;
+  top: unset;
+}
+@media (max-width: 725px) {
+  .main__background, .main__copy {
+    top: 4rem;
+  }
 }
 .main__background {
   height: 100%;
@@ -213,10 +263,13 @@ h6 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: unset;
+    padding-block: 4rem 1rem;
   }
 }
 .services__info, .services__list {
   width: 50%;
+  padding: 1rem;
 }
 @media (max-width: 725px) {
   .services__info, .services__list {
@@ -242,20 +295,27 @@ h6 {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  background-color: hsl(205deg, 38%, 40%);
   padding-inline: clamp(1rem, 5%, 9rem);
 }
 @media (max-width: 725px) {
   .about {
     text-align: center;
+    height: unset;
+    padding-block: 4rem 1rem;
   }
 }
+.about__cadence {
+  padding-inline: 1rem;
+}
 .about__cadence-sub-header {
-  color: hsl(205deg, 38%, 40%);
+  color: hsl(230deg, 23%, 95%);
 }
 .about__owner {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 @media (max-width: 725px) {
   .about__owner {
@@ -272,11 +332,18 @@ h6 {
   display: flex;
   align-items: center;
   padding: 1rem;
+  color: hsl(166deg, 73%, 88%);
 }
-@media (max-width: 450px) {
+@media (max-width: 475px) {
   .about__owner-list-item {
     flex-direction: column;
   }
+}
+.about__owner-list-item a {
+  color: hsl(166deg, 73%, 88%);
+}
+.about__owner-list-item a:hover {
+  color: hsl(230deg, 23%, 95%);
 }
 
 .contact {
@@ -287,11 +354,18 @@ h6 {
   height: 100%;
   padding-inline: clamp(1rem, 5%, 9rem);
 }
+@media (max-width: 725px) {
+  .contact {
+    height: unset;
+    padding-block: 4rem 1rem;
+  }
+}
 .contact__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding-inline: 1rem;
 }
 .contact__info-container {
   display: flex;
@@ -342,9 +416,21 @@ h6 {
   padding: 1rem;
 }
 
-@media (max-width: 750px) {
-  .services, .about, .contact {
-    height: auto;
-    padding-block: 4rem;
+footer {
+  text-align: center;
+  font-size: clamp(0.8rem, 0.84rem - 0.05vw, 0.83rem);
+}
+footer * {
+  padding: 1rem;
+}
+
+@media screen and (max-height: 650px) and (orientation: landscape) {
+  .services,
+.about,
+.contact {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding-block: 5rem 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
